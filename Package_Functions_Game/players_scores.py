@@ -2,22 +2,20 @@ import pygame
 
 pygame.init()
 screen = pygame.display.set_mode((800, 600))
-font_score = pygame.font.Font(None, 64)
 font_players = pygame.font.Font(None, 32)
+font_score = pygame.font.Font(None, 64)
+RED = (255, 0, 0)
+WHITE = (255, 255, 255)
 
-def players_score (player_1_score, player_2_score):
-    #Muestro por pantalla los puntajes
-    score_text_p1 = font_score.render(f"{player_1_score}", True, (255, 255, 255))
-    score_text_p2 = font_score.render(f"{player_2_score}", True, (255, 255, 255))
+def players_scores(player_1_score, player_2_score):
+    player_1_surface = font_players.render("PLAYER 1", True, RED)
+    player_2_surface = font_players.render("PLAYER 2", True, RED)
 
-    #Muestro por pantalla a que jugador pertenece el puntaje
-    player_1_text = font_players.render("Player 1", True, (255, 0, 0))
-    player_2_text = font_players.render("Player 2", True, (255, 0, 0))
+    score_surface_p1 = font_score.render(f"{player_1_score}", True, WHITE)
+    score_surface_p2 = font_score.render(f"{player_2_score}", True, WHITE)
 
-    #Nombres
-    screen.blit(player_1_text, (300, 10))
-    screen.blit(player_2_text, (420, 10))
+    screen.blit(player_1_surface, (screen.get_width() / 2 - player_1_surface.get_width() - 10, 10))
+    screen.blit(player_2_surface, (screen.get_width() / 2 + 10, 10))
 
-    #Puntajes
-    screen.blit(score_text_p1, (325, 40))  
-    screen.blit(score_text_p2, (450, 40))
+    screen.blit(score_surface_p1, (screen.get_width() / 2 - score_surface_p1.get_width() - player_1_surface.get_width() / 2, 40))  
+    screen.blit(score_surface_p2, (screen.get_width() / 2 + player_2_surface.get_width() / 2, 40))
