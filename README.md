@@ -1,55 +1,52 @@
-# Introducción
+# Pong – Juego de Tenis Clásico
 
-El objetivo de este ejercicio es desarrollar un juego de tenis clásico (Pong) utilizando
-Pygame. Los jugadores controlarán dos paletas que deben evitar que la pelota pase
-detrás de ellas. Se otorgará un punto al jugador contrario si la pelota cruza el límite de la pantalla detrás de la paleta del oponente.
+Juego de tenis clásico (Pong) desarrollado en Python utilizando la librería Pygame.  
+Dos jugadores controlan paletas y compiten para evitar que la pelota cruce su lado de la pantalla.
 
-# Requisitos
+## Descripción
 
-1. Ventana del juego:  
-● Dimensiones: 800x600 píxeles.  
-● Fondo negro.
+El juego se ejecuta en una ventana gráfica donde una pelota se mueve de forma continua rebotando contra las paredes y las paletas de los jugadores.  
+Cada vez que la pelota atraviesa el límite de una paleta, el jugador contrario suma un punto.  
+El primer jugador en alcanzar los 10 puntos gana la partida.
 
-2. Elementos del juego:  
-● Pelota:  
-    ● Tamaño: cuadrado de 20x20 píxeles.  
-    ● Movimiento: la pelota debe moverse diagonalmente al iniciar.  
-● Paletas:  
-    ● Tamaño: rectángulos de 20 píxeles de ancho y 100 píxeles de alto.  
-    ● Control:  
-        ● Paleta izquierda: controlada por las teclas W (arriba) y S (abajo).  
-        ● Paleta derecha: controlada por las flechas de dirección ↑ (arriba) y ↓ (abajo).
+## Funcionalidades
 
-3. Mecánicas del juego:  
-    ● La pelota debe rebotar en las paredes superiores e inferiores de la ventana.  
-    ● Si la pelota toca una paleta, debe rebotar cambiando de dirección.  
-    ● Si la pelota cruza el límite izquierdo o derecho de la pantalla, se suma un punto al oponente y la pelota vuelve al centro con una dirección aleatoria.
+- Ventana de juego de 800x600 píxeles
+- Fondo negro
+- Pelota con movimiento diagonal y rebotes:
+  - Rebote en paredes superiores e inferiores
+  - Rebote al colisionar con las paletas
+- Paletas controladas por teclado:
+  - Jugador 1: teclas **W** (arriba) y **S** (abajo)
+  - Jugador 2: flechas **↑** (arriba) y **↓** (abajo)
+- Sistema de puntuación visible en pantalla
+- Detección de victoria al alcanzar 10 puntos
+- Mensaje de ganador al finalizar la partida
+- Posibilidad de reiniciar el juego presionando la tecla **R**
 
-4. Sistema de puntuación:  
-    ● Mostrar el puntaje de ambos jugadores en la parte superior de la ventana.  
-    ● Cada jugador comienza con 0 puntos.  
-    ● El primer jugador que alcance 10 puntos gana el juego.
+## Tecnologías
 
-5. Interfaz del juego:  
-    ● Mensaje "Jugador 1 Gana" o "Jugador 2 Gana" cuando uno de los jugadores llegue a 10 puntos.  
-    ● Permitir reiniciar el juego presionando la tecla R.
+- Python
+- Pygame
 
-6. Extras (Opcional):  
-    ● Aumentar gradualmente la velocidad de la pelota con cada rebote.  
-    ● Sonidos para:  
-        ● El rebote de la pelota en las paletas o paredes.  
-        ● La anotación de puntos.
+## Controles
 
-# Entregables  
-    ● Código fuente del juego en Python.  
-    ● Archivos necesarios para el correcto funcionamiento (si usas recursos externos como sonidos o fuentes personalizadas).  
-    ● Instrucciones breves sobre cómo ejecutar el juego.
+- **Jugador 1**
+  - W: mover paleta hacia arriba
+  - S: mover paleta hacia abajo
+- **Jugador 2**
+  - ↑: mover paleta hacia arriba
+  - ↓: mover paleta hacia abajo
+- **R**: reiniciar el juego
 
-# Evaluación
+## Ejecución
 
-El proyecto será evaluado según:  
-    ● Correcto funcionamiento de las mecánicas del juego.  
-    ● Claridad y limpieza del código (uso de funciones, comentarios, y buenas prácticas).  
-    ● Implementación de los extras (si aplica).
-
-¡Buena suerte desarrollando tu juego de Pong!🎮
+1. Clonar el repositorio
+2. Instalar las dependencias necesarias:
+```bash
+pip install pygame
+```
+3. Ejecutar el archivo principal del juego:
+```bash
+python main.py
+```
